@@ -1,4 +1,4 @@
-package sapodorado.eggmod.callback;
+package net.sapodorado.eggmod.callback;
 
 import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;

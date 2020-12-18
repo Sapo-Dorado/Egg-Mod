@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "sapodorado.eggmod.mixin",
+  "package": "net.sapodorado.eggmod.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
   ],
