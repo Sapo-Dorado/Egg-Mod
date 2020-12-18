@@ -12,7 +12,6 @@ public class EggMod implements ModInitializer {
         EggBreakCallback.EVENT.register((egg, hitResult) -> {
             if (!egg.world.isClient) {
                 ChickenEntity chickenEntity = (ChickenEntity)EntityType.CHICKEN.create(egg.world);
-                chickenEntity.setBreedingAge(-24000);
                 chickenEntity.refreshPositionAndAngles(egg.getX(), egg.getY(), egg.getZ(), egg.yaw, 0.0F);
                 egg.world.spawnEntity(chickenEntity);
                 egg.world.sendEntityStatus(egg, (byte)3);
