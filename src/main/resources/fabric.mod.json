@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "egg-mod",
+  "id": "eggmod",
   "version": "${version}",
 
   "name": "Egg Mod",
@@ -19,11 +19,11 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "sapodorado.eggmod.EggMod"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "eggmod.mixins.json"
   ],
 
   "depends": {
