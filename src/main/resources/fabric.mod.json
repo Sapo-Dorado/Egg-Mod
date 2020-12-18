@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "egg-mod",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Egg Mod",
+  "description": "This mod makes eggs spawn random entities instead of just chickens",
   "authors": [
-    "Me!"
+    "Sapo-Dorado"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/Sapo-Dorado/Egg-Mod"
   },
 
   "license": "CC0-1.0",
