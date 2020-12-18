@@ -12,7 +12,7 @@ import sapodorado.eggmod.callback.EggBreakCallback;
 
 @Mixin(EggEntity.class) 
 public class EggBreakMixin{
-	@Inject(at = @At(value="INVOKE", target="java.util.Random.nextInt(I)I"), method="onCollision()V", cancellable = true)
+	@Inject(at = @At(value="INVOKE", target="java.util.Random.nextInt(I)I"), method="net.minecraft.entity.projectile.thrown.EggEntity.onCollision()V", cancellable = true)
 	private void collision(final HitResult hitResult, final CallbackInfo info) {
 		ActionResult result = EggBreakCallback.EVENT.invoker().collide((EggEntity) (Object) this, hitResult);
 
