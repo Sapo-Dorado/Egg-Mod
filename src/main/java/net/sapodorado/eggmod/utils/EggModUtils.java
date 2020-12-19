@@ -1,18 +1,9 @@
 package net.sapodorado.eggmod.utils;
 
-import java.util.Random;
-
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.projectile.thrown.EggEntity;
-import net.minecraft.entity.passive.SheepEntity;
-import net.minecraft.entity.passive.CatEntity;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.hit.HitResult;
 
 public class EggModUtils {
-    private static final Random random = new Random();
-    private static final EntityType[] entities = {
+    public static final EntityType<?>[] entities = {
         EntityType.BAT,
         EntityType.BEE,
         EntityType.BLAZE,
@@ -85,36 +76,6 @@ public class EggModUtils {
         EntityType.ZOMBIFIED_PIGLIN,
     };
 
-    private static final int CAT_IDX = 3;
-    private static final int SHEEP_IDX = 43;
-
     private EggModUtils() {
     }
-
-    private static void updateEntity(Entity entity, int idx){
-        switch(idx){
-            case CAT_IDX:
-                ((SheepEntity)entity).setColor(SheepEntity.generateDefaultColor(new Random()));
-                break;
-            case SHEEP_IDX:
-                ((CatEntity)entity).setCatType(random.nextInt(10));
-                break;
-            default:
-                break;
-        }
-    }
-
-    public static ActionResult processCollision(EggEntity egg, HitResult hitResult){
-        if (!egg.world.isClient) {
-            int idx = random.nextInt(entities.length);
-            Entity entity = entities[idx].create(egg.world);
-            updateEntity(entity, idx);
-            entity.refreshPositionAndAngles(egg.getX(), egg.getY(), egg.getZ(), egg.yaw, 0.0F);
-            egg.world.spawnEntity(entity);
-            egg.world.sendEntityStatus(egg, (byte)3);
-            egg.remove();
-        }
-        return ActionResult.FAIL;
-    }
-
 }

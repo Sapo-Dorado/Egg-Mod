@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "net.sapodorado.eggmod.EggMod"
+    ],
+    "client": [
+      "net.sapodorado.eggmod.client.EggModClient"
     ]
   },
   "mixins": [
