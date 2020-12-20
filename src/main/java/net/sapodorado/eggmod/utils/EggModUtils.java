@@ -1,81 +1,100 @@
 package net.sapodorado.eggmod.utils;
 
+import java.util.Random;
+
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.passive.CatEntity;
+import net.minecraft.entity.passive.SheepEntity;
 
 public class EggModUtils {
-    public static final EntityType<?>[] entities = {
+    private static final Random random = new Random();
+    public static final EntityType<?>[] passive_entities = {
         EntityType.BAT,
         EntityType.BEE,
-        EntityType.BLAZE,
         EntityType.CAT,
-        EntityType.CAVE_SPIDER,
         EntityType.CHICKEN,
         EntityType.COD,
         EntityType.COW,
-        EntityType.CREEPER,
         EntityType.DOLPHIN,
         EntityType.DONKEY,
-        EntityType.DROWNED,
-        EntityType.ELDER_GUARDIAN,
-        EntityType.ENDER_DRAGON,
-        EntityType.ENDERMAN,
-        EntityType.ENDERMITE,
-        EntityType.EVOKER,
         EntityType.FOX,
-        EntityType.GHAST,
-        EntityType.GIANT,
-        EntityType.GUARDIAN,
-        EntityType.HOGLIN,
         EntityType.HORSE,
-        EntityType.HUSK,
-        EntityType.ILLUSIONER,
         EntityType.IRON_GOLEM,
         EntityType.LLAMA,
-        EntityType.MAGMA_CUBE,
         EntityType.MULE,
         EntityType.MOOSHROOM,
         EntityType.OCELOT,
         EntityType.PANDA,
         EntityType.PARROT,
-        EntityType.PHANTOM,
         EntityType.PIG,
-        EntityType.PIGLIN,
-        EntityType.PIGLIN_BRUTE,
-        EntityType.PILLAGER,
         EntityType.POLAR_BEAR,
         EntityType.PUFFERFISH,
         EntityType.RABBIT,
-        EntityType.RAVAGER,
         EntityType.SALMON,
         EntityType.SHEEP,
-        EntityType.SHULKER,
-        EntityType.SILVERFISH,
-        EntityType.SKELETON,
         EntityType.SKELETON_HORSE,
-        EntityType.SLIME,
         EntityType.SNOW_GOLEM,
-        EntityType.SPIDER,
         EntityType.SQUID,
-        EntityType.STRAY,
         EntityType.STRIDER,
         EntityType.TRADER_LLAMA,
         EntityType.TROPICAL_FISH,
         EntityType.TURTLE,
-        EntityType.VEX,
         EntityType.VILLAGER,
-        EntityType.VINDICATOR,
         EntityType.WANDERING_TRADER,
-        EntityType.WITCH,
-        EntityType.WITHER,
-        EntityType.WITHER_SKELETON,
         EntityType.WOLF,
-        EntityType.ZOGLIN,
-        EntityType.ZOMBIE,
-        EntityType.ZOMBIE_HORSE,
-        EntityType.ZOMBIE_VILLAGER,
-        EntityType.ZOMBIFIED_PIGLIN,
+        EntityType.ZOMBIE_HORSE
     };
 
-    private EggModUtils() {
+    public static final EntityType<?>[] hostile_entities = {
+        EntityType.BLAZE,
+        EntityType.CAVE_SPIDER,
+        EntityType.CREEPER,
+        EntityType.DROWNED,
+        EntityType.ELDER_GUARDIAN,
+        EntityType.ENDERMAN,
+        EntityType.ENDERMITE,
+        EntityType.EVOKER,
+        EntityType.GHAST,
+        EntityType.GUARDIAN,
+        EntityType.HOGLIN,
+        EntityType.HUSK,
+        EntityType.ILLUSIONER,
+        EntityType.MAGMA_CUBE,
+        EntityType.PHANTOM,
+        EntityType.PIGLIN,
+        EntityType.PIGLIN_BRUTE,
+        EntityType.PILLAGER,
+        EntityType.RAVAGER,
+        EntityType.SHULKER,
+        EntityType.SILVERFISH,
+        EntityType.SKELETON,
+        EntityType.SLIME,
+        EntityType.SPIDER,
+        EntityType.STRAY,
+        EntityType.VEX,
+        EntityType.VINDICATOR,
+        EntityType.WITCH,
+        EntityType.WITHER_SKELETON,
+        EntityType.ZOGLIN,
+        EntityType.ZOMBIE,
+        EntityType.ZOMBIE_VILLAGER,
+        EntityType.ZOMBIFIED_PIGLIN
+    };
+
+    public static final EntityType<?>[] boss_entities = {
+        EntityType.GIANT,
+        EntityType.ENDER_DRAGON,
+        EntityType.WITHER
+    };
+
+    public static void process_entity(Entity entity){
+        EntityType<?> type = entity.getType();
+        if(type.equals(EntityType.CAT)) {
+            ((CatEntity)entity).setCatType(random.nextInt(10));
+        } else if(type.equals(EntityType.SHEEP)) {
+            ((SheepEntity)entity).setColor(SheepEntity.generateDefaultColor(new Random()));
+        }
     }
+
 }

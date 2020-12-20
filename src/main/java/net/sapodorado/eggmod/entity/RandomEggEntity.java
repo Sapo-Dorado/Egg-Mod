@@ -53,8 +53,16 @@ public class RandomEggEntity extends ThrownItemEntity {
     protected void onCollision(HitResult hitResult) {
         super.onCollision(hitResult);
         if (!this.world.isClient) {
-            int idx = random.nextInt(EggModUtils.entities.length);
-            Entity entity = EggModUtils.entities[idx].create(this.world);
+            int idx;
+            Entity entity;
+            if(random.nextInt(2) == 0) {
+                idx = random.nextInt(EggModUtils.passive_entities.length);
+                entity = EggModUtils.passive_entities[idx].create(this.world);
+            } else {
+                idx = random.nextInt(EggModUtils.hostile_entities.length);
+                entity = EggModUtils.hostile_entities[idx].create(this.world);
+            }
+            EggModUtils.process_entity(entity);
             entity.refreshPositionAndAngles(this.getX(), this.getY(), this.getZ(), this.yaw, 0.0F);
             this.world.spawnEntity(entity);
 
