@@ -1,4 +1,6 @@
 {
     "item.eggmod.random_egg_item":"Random Egg",
-    "item.eggmod.random_egg_item.tooltip":"Summons a random mob"
+    "item.eggmod.random_egg_item.tooltip":"Summons a random mob",
+    "item.eggmod.passive_egg_item":"Passive Egg",
+    "item.eggmod.passive_egg_item.tooltip":"Summons a random passive mob"
 }

@@ -21,6 +21,8 @@ public class EggModClient implements ClientModInitializer {
 	public void onInitializeClient() {
 		EntityRendererRegistry.INSTANCE.register(EggMod.RANDOM_EGG_ENTITY, (dispatcher, context) ->
 				new FlyingItemEntityRenderer<>(dispatcher, context.getItemRenderer()));
+		EntityRendererRegistry.INSTANCE.register(EggMod.PASSIVE_EGG_ENTITY, (dispatcher, context) ->
+				new FlyingItemEntityRenderer<>(dispatcher, context.getItemRenderer()));
 		receiveEntityPacket();
 	}
 
