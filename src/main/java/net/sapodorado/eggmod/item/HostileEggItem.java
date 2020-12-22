@@ -13,10 +13,10 @@ import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-import net.sapodorado.eggmod.entity.PassiveEggEntity;
+import net.sapodorado.eggmod.entity.HostileEggEntity;
 
-public class PassiveEggItem extends EggItem {
-    public PassiveEggItem(Settings settings) {
+public class HostileEggItem extends EggItem {
+    public HostileEggItem(Settings settings) {
         super(settings);
     }
 
@@ -25,7 +25,7 @@ public class PassiveEggItem extends EggItem {
         ItemStack itemStack = user.getStackInHand(hand);
         world.playSound((PlayerEntity)null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_EGG_THROW, SoundCategory.PLAYERS, 0.5F, 0.4F / (RANDOM.nextFloat() * 0.4F + 0.8F));
         if (!world.isClient) {
-           PassiveEggEntity passiveEggEntity = new PassiveEggEntity(world, user);
+           HostileEggEntity passiveEggEntity = new HostileEggEntity(world, user);
            passiveEggEntity.setItem(itemStack);
            passiveEggEntity.setProperties(user, user.pitch, user.yaw, 0.0F, 1.5F, 1.0F);
            world.spawnEntity(passiveEggEntity);
@@ -41,6 +41,6 @@ public class PassiveEggItem extends EggItem {
 
     @Override
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
-        tooltip.add(new TranslatableText("item.eggmod.passive_egg_item.tooltip"));
+        tooltip.add(new TranslatableText("item.eggmod.hostile_egg_item.tooltip"));
     }
 }
