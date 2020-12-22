@@ -18,6 +18,6 @@
         }
     },
     "rewards":{
-        "recipes":["eggmod:random_egg_item","eggmod:passive_egg_item","eggmod:hostile_egg_item","eggmod:unlucky_egg_item","eggmod:mildly_lucky_egg","eggmod:very_lucky_egg"]
+        "recipes":["eggmod:random_egg_item","eggmod:passive_egg_item","eggmod:hostile_egg_item","eggmod:unlucky_egg_item"]
     }
 }
