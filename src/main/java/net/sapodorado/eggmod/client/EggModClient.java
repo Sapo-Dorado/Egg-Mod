@@ -26,7 +26,8 @@ public class EggModClient implements ClientModInitializer {
 		EggMod.CREEPER_EGG_ENTITY,
 		EggMod.CHARGED_CREEPER_EGG_ENTITY,
 		EggMod.TNT_EGG_ENTITY,
-		EggMod.EASTER_EGG_ENTITY
+		EggMod.EASTER_EGG_ENTITY,
+		EggMod.ASSASSIN_EGG_ENTITY
 	};
 	@Override
 	public void onInitializeClient() {

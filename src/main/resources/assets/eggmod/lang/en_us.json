@@ -13,5 +13,7 @@
     "item.eggmod.charged_creeper_egg_item.tooltip":"Summons four charged creepers",
     "item.eggmod.tnt_egg_item":"TNT egg",
     "item.eggmod.tnt_egg_item.tooltip":"Blows stuff up",
-    "item.eggmod.easter_egg_item":"Easter egg"
+    "item.eggmod.easter_egg_item":"Easter egg",
+    "item.eggmod.assassin_egg_item":"Assassin egg",
+    "item.eggmod.assassin_egg_item.tooltip":"Great power comes at a cost"
 }
