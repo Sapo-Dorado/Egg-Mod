@@ -16,12 +16,14 @@ import net.sapodorado.eggmod.entity.CreeperEggEntity;
 import net.sapodorado.eggmod.entity.HostileEggEntity;
 import net.sapodorado.eggmod.entity.PassiveEggEntity;
 import net.sapodorado.eggmod.entity.RandomEggEntity;
+import net.sapodorado.eggmod.entity.TntEggEntity;
 import net.sapodorado.eggmod.item.BossEggItem;
 import net.sapodorado.eggmod.item.ChargedCreeperEggItem;
 import net.sapodorado.eggmod.item.CreeperEggItem;
 import net.sapodorado.eggmod.item.HostileEggItem;
 import net.sapodorado.eggmod.item.PassiveEggItem;
 import net.sapodorado.eggmod.item.RandomEggItem;
+import net.sapodorado.eggmod.item.TntEggItem;
 
 public class EggMod implements ModInitializer {
 
@@ -32,6 +34,7 @@ public class EggMod implements ModInitializer {
     public static final Item BOSS_EGG_ITEM = new BossEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16));
     public static final Item CREEPER_EGG_ITEM = new CreeperEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16));
     public static final Item CHARGED_CREEPER_EGG_ITEM = new ChargedCreeperEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16));
+    public static final Item TNT_EGG_ITEM = new TntEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16));
 
     public static final EntityType<RandomEggEntity> RANDOM_EGG_ENTITY = Registry.register(
                     Registry.ENTITY_TYPE,
@@ -87,6 +90,15 @@ public class EggMod implements ModInitializer {
                                     .build()
     );
 
+    public static final EntityType<TntEggEntity> TNT_EGG_ENTITY = Registry.register(
+                    Registry.ENTITY_TYPE,
+                    new Identifier(MODID, "tnt_egg_item"),
+                    FabricEntityTypeBuilder.<TntEggEntity>create(SpawnGroup.MISC, TntEggEntity::new)
+                                    .dimensions(EntityDimensions.fixed(0.25F,0.25F))
+                                    .trackRangeBlocks(4).trackedUpdateRate(10)
+                                    .build()
+    );
+
 	@Override
 	public void onInitialize() {
         Registry.register(Registry.ITEM, new Identifier(MODID, "random_egg_item"), RANDOM_EGG_ITEM);
@@ -95,6 +107,7 @@ public class EggMod implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier(MODID, "boss_egg_item"), BOSS_EGG_ITEM);
         Registry.register(Registry.ITEM, new Identifier(MODID, "creeper_egg_item"), CREEPER_EGG_ITEM);
         Registry.register(Registry.ITEM, new Identifier(MODID, "charged_creeper_egg_item"), CHARGED_CREEPER_EGG_ITEM);
+        Registry.register(Registry.ITEM, new Identifier(MODID, "tnt_egg_item"), TNT_EGG_ITEM);
     }
 
 }

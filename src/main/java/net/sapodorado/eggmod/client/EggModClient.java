@@ -17,20 +17,22 @@ import java.util.UUID;
 
 public class EggModClient implements ClientModInitializer {
 	public static final Identifier PacketID = new Identifier(EggMod.MODID, "spawn_packet");
+
+	private static final EntityType<?> entities[] = {
+		EggMod.RANDOM_EGG_ENTITY,
+		EggMod.PASSIVE_EGG_ENTITY,
+		EggMod.HOSTILE_EGG_ENTITY,
+		EggMod.BOSS_EGG_ENTITY,
+		EggMod.CREEPER_EGG_ENTITY,
+		EggMod.CHARGED_CREEPER_EGG_ENTITY,
+		EggMod.TNT_EGG_ENTITY
+	};
 	@Override
 	public void onInitializeClient() {
-		EntityRendererRegistry.INSTANCE.register(EggMod.RANDOM_EGG_ENTITY, (dispatcher, context) ->
-				new FlyingItemEntityRenderer<>(dispatcher, context.getItemRenderer()));
-		EntityRendererRegistry.INSTANCE.register(EggMod.PASSIVE_EGG_ENTITY, (dispatcher, context) ->
-				new FlyingItemEntityRenderer<>(dispatcher, context.getItemRenderer()));
-		EntityRendererRegistry.INSTANCE.register(EggMod.HOSTILE_EGG_ENTITY, (dispatcher, context) ->
-				new FlyingItemEntityRenderer<>(dispatcher, context.getItemRenderer()));
-		EntityRendererRegistry.INSTANCE.register(EggMod.BOSS_EGG_ENTITY, (dispatcher, context) ->
-				new FlyingItemEntityRenderer<>(dispatcher, context.getItemRenderer()));
-		EntityRendererRegistry.INSTANCE.register(EggMod.CREEPER_EGG_ENTITY, (dispatcher, context) ->
-				new FlyingItemEntityRenderer<>(dispatcher, context.getItemRenderer()));
-		EntityRendererRegistry.INSTANCE.register(EggMod.CHARGED_CREEPER_EGG_ENTITY, (dispatcher, context) ->
-				new FlyingItemEntityRenderer<>(dispatcher, context.getItemRenderer()));
+		for(EntityType<?> e: entities) {
+			EntityRendererRegistry.INSTANCE.register(e, (dispatcher, context) ->
+					new FlyingItemEntityRenderer<>(dispatcher, context.getItemRenderer()));
+		}
 		receiveEntityPacket();
 	}
 

@@ -10,5 +10,7 @@
     "item.eggmod.creeper_egg_item":"Creeper egg",
     "item.eggmod.creeper_egg_item.tooltip":"Summons four creepers",
     "item.eggmod.charged_creeper_egg_item":"Charged Creeper egg",
-    "item.eggmod.charged_creeper_egg_item.tooltip":"Summons four charged creepers"
+    "item.eggmod.charged_creeper_egg_item.tooltip":"Summons four charged creepers",
+    "item.eggmod.tnt_egg_item":"TNT egg",
+    "item.eggmod.tnt_egg_item.tooltip":"Blows stuff up"
 }

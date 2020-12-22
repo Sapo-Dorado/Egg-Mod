@@ -83,7 +83,7 @@ public class ChargedCreeperEggEntity extends ThrownItemEntity {
 
     @Override
     protected Item getDefaultItem() {
-        return EggMod.BOSS_EGG_ITEM;
+        return EggMod.CHARGED_CREEPER_EGG_ITEM;
     }
 
     @Override
