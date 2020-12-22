@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "Egg Mod",
-  "description": "This mod makes eggs spawn random entities instead of just chickens",
+  "description": "This mod adds new eggs to Minecraft that have cool effects",
   "authors": [
     "Sapo-Dorado"
   ],
@@ -14,7 +14,7 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/eggmod/icon.png",
 
   "environment": "*",
   "entrypoints": {

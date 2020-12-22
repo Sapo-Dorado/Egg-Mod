@@ -5,6 +5,10 @@
     "item.eggmod.passive_egg_item.tooltip":"Summons a random passive mob",
     "item.eggmod.hostile_egg_item":"Hostile Egg",
     "item.eggmod.hostile_egg_item.tooltip":"Summons a random hostile mob",
-    "item.eggmod.boss_egg_item":"Boss Egg",
-    "item.eggmod.boss_egg_item.tooltip":"Summons a random boss mob"
+    "item.eggmod.boss_egg_item":"Boss egg",
+    "item.eggmod.boss_egg_item.tooltip":"Summons a random boss mob",
+    "item.eggmod.creeper_egg_item":"Creeper egg",
+    "item.eggmod.creeper_egg_item.tooltip":"Summons four creepers",
+    "item.eggmod.charged_creeper_egg_item":"Charged Creeper egg",
+    "item.eggmod.charged_creeper_egg_item.tooltip":"Summons four charged creepers"
 }
