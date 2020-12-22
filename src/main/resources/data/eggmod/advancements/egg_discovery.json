@@ -1,0 +1,23 @@
+{
+    "display":{
+        "description":"Find an egg",
+        "title":"Discover Eggs",
+        "icon":{
+            "item":"eggmod:random_egg_item"
+        },
+        "background":"eggmod:textures/random_egg_item.png"
+    },
+    "criteria":{
+        "eggmod:trigger":{
+            "trigger": "minecraft:inventory_changed",
+            "conditions":{
+                "items":[
+                    { "item":"minecraft:egg"}
+                ]
+            }
+        }
+    },
+    "rewards":{
+        "recipes":["eggmod:random_egg_item","eggmod:passive_egg_item","eggmod:hostile_egg_item","eggmod:unlucky_egg_item","eggmod:mildly_lucky_egg","eggmod:very_lucky_egg"]
+    }
+}

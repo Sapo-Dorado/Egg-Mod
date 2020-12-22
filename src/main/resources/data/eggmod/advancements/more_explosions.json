@@ -1,0 +1,23 @@
+{
+    "display":{
+        "description":"Acquire the Creeper egg",
+        "title":"More Explosions",
+        "icon":{
+            "item":"eggmod:charged_creeper_egg_item"
+        }
+    },
+    "parent":"eggmod:explosive_discovery",
+    "criteria":{
+        "eggmod:trigger":{
+            "trigger": "minecraft:inventory_changed",
+            "conditions":{
+                "items":[
+                    {"item":"eggmod:creeper_egg_item"}
+                ]
+            }
+        }
+    },
+    "rewards":{
+        "recipes":["eggmod:charged_creeper_egg_item"]
+    }
+}

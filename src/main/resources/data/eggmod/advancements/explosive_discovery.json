@@ -1,0 +1,24 @@
+{
+    "display":{
+        "description":"Find gunpowder and an egg at the same time",
+        "title":"Explosives Acquired",
+        "icon":{
+            "item":"eggmod:creeper_egg_item"
+        }
+    },
+    "parent":"eggmod:egg_discovery",
+    "criteria":{
+        "eggmod:trigger":{
+            "trigger": "minecraft:inventory_changed",
+            "conditions":{
+                "items":[
+                    {"item":"minecraft:egg"},
+                    {"item":"minecraft:gunpowder"}
+                ]
+            }
+        }
+    },
+    "rewards":{
+        "recipes":["eggmod:creeper_egg_item", "eggmod:tnt_egg_item"]
+    }
+}

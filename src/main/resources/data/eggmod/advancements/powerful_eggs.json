@@ -1,0 +1,23 @@
+{
+    "display":{
+        "description":"Acquire the hostile egg",
+        "title":"Powerful Eggs",
+        "icon":{
+            "item":"eggmod:boss_egg_item"
+        }
+    },
+    "parent":"eggmod:egg_discovery",
+    "criteria":{
+        "eggmod:trigger":{
+            "trigger": "minecraft:inventory_changed",
+            "conditions":{
+                "items":[
+                    {"item":"eggmod:hostile_egg_item"}
+                ]
+            }
+        }
+    },
+    "rewards":{
+        "recipes":["eggmod:boss_egg_item"]
+    }
+}

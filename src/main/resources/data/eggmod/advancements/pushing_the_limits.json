@@ -1,0 +1,24 @@
+
+{
+    "display":{
+        "description":"Acquire the Boss egg",
+        "title":"Pushing the Limits",
+        "icon":{
+            "item":"eggmod:assassin_egg_item"
+        }
+    },
+    "parent":"eggmod:powerful_eggs",
+    "criteria":{
+        "eggmod:trigger":{
+            "trigger": "minecraft:inventory_changed",
+            "conditions":{
+                "items":[
+                    {"item":"eggmod:boss_egg_item"}
+                ]
+            }
+        }
+    },
+    "rewards":{
+        "recipes":["eggmod:assassin_egg_item"]
+    }
+}
