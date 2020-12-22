@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "EEE",
+      "ERE",
+      "EEE"
+    ],
+    "key": {
+      "E": {
+        "item": "eggmod:random_egg_item"
+      },
+      "R":{
+          "item": "minecraft:rotten_flesh"
+      }
+    },
+    "result": {
+      "item": "eggmod:hostile_egg_item",
+      "count": 1
+    }
+}

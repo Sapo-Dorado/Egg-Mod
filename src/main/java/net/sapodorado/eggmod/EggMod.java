@@ -16,18 +16,24 @@ import net.sapodorado.eggmod.entity.ChargedCreeperEggEntity;
 import net.sapodorado.eggmod.entity.CreeperEggEntity;
 import net.sapodorado.eggmod.entity.EasterEggEntity;
 import net.sapodorado.eggmod.entity.HostileEggEntity;
+import net.sapodorado.eggmod.entity.MildlyLuckyEggEntity;
 import net.sapodorado.eggmod.entity.PassiveEggEntity;
 import net.sapodorado.eggmod.entity.RandomEggEntity;
 import net.sapodorado.eggmod.entity.TntEggEntity;
+import net.sapodorado.eggmod.entity.UnluckyEggEntity;
+import net.sapodorado.eggmod.entity.VeryLuckyEggEntity;
 import net.sapodorado.eggmod.item.AssassinEggItem;
 import net.sapodorado.eggmod.item.BossEggItem;
 import net.sapodorado.eggmod.item.ChargedCreeperEggItem;
 import net.sapodorado.eggmod.item.CreeperEggItem;
 import net.sapodorado.eggmod.item.EasterEggItem;
 import net.sapodorado.eggmod.item.HostileEggItem;
+import net.sapodorado.eggmod.item.MildlyLuckyEggItem;
 import net.sapodorado.eggmod.item.PassiveEggItem;
 import net.sapodorado.eggmod.item.RandomEggItem;
 import net.sapodorado.eggmod.item.TntEggItem;
+import net.sapodorado.eggmod.item.UnluckyEggItem;
+import net.sapodorado.eggmod.item.VeryLuckyEggItem;
 
 public class EggMod implements ModInitializer {
 
@@ -42,6 +48,9 @@ public class EggMod implements ModInitializer {
     public static final Item TNT_EGG_ITEM = new TntEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16));
     public static final Item EASTER_EGG_ITEM = new EasterEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16));
     public static final Item ASSASSIN_EGG_ITEM = new AssassinEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16));
+    public static final Item UNLUCKY_EGG_ITEM = new UnluckyEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16));
+    public static final Item MILDLY_LUCKY_EGG_ITEM = new MildlyLuckyEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16));
+    public static final Item VERY_LUCKY_EGG_ITEM = new VeryLuckyEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16));
 
     public static final EntityType<RandomEggEntity> RANDOM_EGG_ENTITY = Registry.register(
                     Registry.ENTITY_TYPE,
@@ -124,6 +133,33 @@ public class EggMod implements ModInitializer {
                                     .build()
     );
 
+    public static final EntityType<UnluckyEggEntity> UNLUCKY_EGG_ENTITY = Registry.register(
+                    Registry.ENTITY_TYPE,
+                    new Identifier(MODID, "unlucky_egg_item"),
+                    FabricEntityTypeBuilder.<UnluckyEggEntity>create(SpawnGroup.MISC, UnluckyEggEntity::new)
+                                    .dimensions(EntityDimensions.fixed(0.25F,0.25F))
+                                    .trackRangeBlocks(4).trackedUpdateRate(10)
+                                    .build()
+    );
+
+    public static final EntityType<MildlyLuckyEggEntity> MILDLY_LUCKY_EGG_ENTITY = Registry.register(
+                    Registry.ENTITY_TYPE,
+                    new Identifier(MODID, "mildly_lucky_egg_item"),
+                    FabricEntityTypeBuilder.<MildlyLuckyEggEntity>create(SpawnGroup.MISC, MildlyLuckyEggEntity::new)
+                                    .dimensions(EntityDimensions.fixed(0.25F,0.25F))
+                                    .trackRangeBlocks(4).trackedUpdateRate(10)
+                                    .build()
+    );
+
+    public static final EntityType<VeryLuckyEggEntity> VERY_LUCKY_EGG_ENTITY = Registry.register(
+                    Registry.ENTITY_TYPE,
+                    new Identifier(MODID, "very_lucky_egg_item"),
+                    FabricEntityTypeBuilder.<VeryLuckyEggEntity>create(SpawnGroup.MISC, VeryLuckyEggEntity::new)
+                                    .dimensions(EntityDimensions.fixed(0.25F,0.25F))
+                                    .trackRangeBlocks(4).trackedUpdateRate(10)
+                                    .build()
+    );
+
 	@Override
 	public void onInitialize() {
         Registry.register(Registry.ITEM, new Identifier(MODID, "random_egg_item"), RANDOM_EGG_ITEM);
@@ -135,6 +171,9 @@ public class EggMod implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier(MODID, "tnt_egg_item"), TNT_EGG_ITEM);
         Registry.register(Registry.ITEM, new Identifier(MODID, "easter_egg_item"), EASTER_EGG_ITEM);
         Registry.register(Registry.ITEM, new Identifier(MODID, "assassin_egg_item"), ASSASSIN_EGG_ITEM);
+        Registry.register(Registry.ITEM, new Identifier(MODID, "unlucky_egg_item"), UNLUCKY_EGG_ITEM);
+        Registry.register(Registry.ITEM, new Identifier(MODID, "mildly_lucky_egg_item"), MILDLY_LUCKY_EGG_ITEM);
+        Registry.register(Registry.ITEM, new Identifier(MODID, "very_lucky_egg_item"), VERY_LUCKY_EGG_ITEM);
     }
 
 }

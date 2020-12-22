@@ -2,7 +2,6 @@ package net.sapodorado.eggmod.entity;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
@@ -16,18 +15,19 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 import net.sapodorado.eggmod.EggMod;
 import net.sapodorado.eggmod.client.EggModClient;
+import net.sapodorado.eggmod.utils.VeryLuckyEggUtils;
 
-public class AssassinEggEntity extends ThrownItemEntity {
-    public AssassinEggEntity(EntityType<? extends AssassinEggEntity> entityType, World world) {
+public class VeryLuckyEggEntity extends ThrownItemEntity {
+    public VeryLuckyEggEntity(EntityType<? extends VeryLuckyEggEntity> entityType, World world) {
         super(entityType, world);
     }
 
-    public AssassinEggEntity(World world, LivingEntity owner) {
-        super(EggMod.ASSASSIN_EGG_ENTITY, owner, world);
+    public VeryLuckyEggEntity(World world, LivingEntity owner) {
+        super(EggMod.VERY_LUCKY_EGG_ENTITY, owner, world);
     }
 
-    public AssassinEggEntity(World world, double x, double y, double z) {
-        super(EggMod.ASSASSIN_EGG_ENTITY, x, y, z, world);
+    public VeryLuckyEggEntity(World world, double x, double y, double z) {
+        super(EggMod.VERY_LUCKY_EGG_ENTITY, x, y, z, world);
     }
 
     @Environment(EnvType.CLIENT)
@@ -35,11 +35,8 @@ public class AssassinEggEntity extends ThrownItemEntity {
         if (status == 3) {
             double d = 0.08D;
 
-            for (int i = 0; i < 8; ++i) {
-                this.world.addParticle(new ItemStackParticleEffect(ParticleTypes.ITEM, this.getStack()), this.getX(),
-                        this.getY(), this.getZ(), ((double) this.random.nextFloat() - 0.5D) * d,
-                        ((double) this.random.nextFloat() - 0.5D) * d,
-                        ((double) this.random.nextFloat() - 0.5D) * 0.08D);
+            for(int i = 0; i < 8; ++i) {
+                this.world.addParticle(new ItemStackParticleEffect(ParticleTypes.ITEM, this.getStack()), this.getX(), this.getY(), this.getZ(), ((double)this.random.nextFloat() - 0.5D) * d, ((double)this.random.nextFloat() - 0.5D) * d, ((double)this.random.nextFloat() - 0.5D) * 0.08D);
             }
         }
 
@@ -48,17 +45,14 @@ public class AssassinEggEntity extends ThrownItemEntity {
     @Override
     protected void onEntityHit(EntityHitResult entityHitResult) {
         super.onEntityHit(entityHitResult);
-        entityHitResult.getEntity().damage(DamageSource.thrownProjectile(this, this.getOwner()), 1000.0F);
+        entityHitResult.getEntity().damage(DamageSource.thrownProjectile(this, this.getOwner()), 0.0F);
     }
 
     @Override
     protected void onCollision(HitResult hitResult) {
         super.onCollision(hitResult);
         if (!this.world.isClient) {
-            if(hitResult.getType() != HitResult.Type.ENTITY){
-                Entity player = this.getOwner();
-                player.damage(DamageSource.thrownProjectile(this, player), 1000.0F);
-            }
+            VeryLuckyEggUtils.processCollision(this);
             this.world.sendEntityStatus(this, (byte)3);
             this.remove();
         }
@@ -67,7 +61,7 @@ public class AssassinEggEntity extends ThrownItemEntity {
 
     @Override
     protected Item getDefaultItem() {
-        return EggMod.ASSASSIN_EGG_ITEM;
+        return EggMod.VERY_LUCKY_EGG_ITEM;
     }
 
     @Override

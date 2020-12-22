@@ -15,5 +15,11 @@
     "item.eggmod.tnt_egg_item.tooltip":"Blows stuff up",
     "item.eggmod.easter_egg_item":"Easter egg",
     "item.eggmod.assassin_egg_item":"Assassin egg",
-    "item.eggmod.assassin_egg_item.tooltip":"Great power comes at a cost"
+    "item.eggmod.assassin_egg_item.tooltip":"Better not miss...",
+    "item.eggmod.unlucky_egg_item":"Unlucky egg",
+    "item.eggmod.unlucky_egg_item.tooltip":"Meh",
+    "item.eggmod.mildly_lucky_egg_item":"Mildly Lucky egg",
+    "item.eggmod.mildly_lucky_egg_item.tooltip":"Not terrible",
+    "item.eggmod.very_lucky_egg_item":"Very Lucky egg",
+    "item.eggmod.very_lucky_egg_item.tooltip":"Wowza"
 }

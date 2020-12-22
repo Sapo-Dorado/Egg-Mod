@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "RRR",
+      "RER",
+      "RRR"
+    ],
+    "key": {
+      "E": {
+        "item": "minecraft:egg"
+      },
+      "R": {
+        "item": "minecraft:rabbit_foot"
+      }
+    },
+    "result": {
+      "item": "eggmod:easter_egg_item",
+      "count": 1
+    }
+}

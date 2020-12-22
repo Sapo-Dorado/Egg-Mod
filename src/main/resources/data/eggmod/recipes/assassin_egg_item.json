@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "EEE",
+      "ESE",
+      "EEE"
+    ],
+    "key": {
+      "E": {
+        "item": "minecraft:egg"
+      },
+      "S":{
+          "item": "minecraft:diamond_sword"
+      }
+    },
+    "result": {
+      "item": "eggmod:assassin_egg_item",
+      "count": 1
+    }
+}

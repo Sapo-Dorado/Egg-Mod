@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "EEE",
+      "EEE",
+      "EEE"
+    ],
+    "key": {
+      "E": {
+        "item": "eggmod:hostile_egg_item"
+      }
+    },
+    "result": {
+      "item": "eggmod:boss_egg_item",
+      "count": 1
+    }
+}

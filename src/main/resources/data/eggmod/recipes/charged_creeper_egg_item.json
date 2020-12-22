@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "GGG",
+      "GEG",
+      "GGG"
+    ],
+    "key": {
+      "E": {
+        "item": "eggmod:creeper_egg_item"
+      },
+      "G":{
+          "item": "minecraft:gunpowder"
+      }
+    },
+    "result": {
+      "item": "eggmod:charged_creeper_egg_item",
+      "count": 1
+    }
+}

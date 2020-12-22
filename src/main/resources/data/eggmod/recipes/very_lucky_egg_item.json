@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "DDD",
+      "DED",
+      "DDD"
+    ],
+    "key": {
+      "E": {
+        "item": "eggmod:mildly_lucky_egg_item"
+      },
+      "D":{
+          "item": "minecraft:diamond"
+      }
+    },
+    "result": {
+      "item": "eggmod:very_lucky_egg_item",
+      "count": 1
+    }
+}

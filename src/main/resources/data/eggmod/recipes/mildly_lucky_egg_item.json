@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "III",
+      "IEI",
+      "III"
+    ],
+    "key": {
+      "E": {
+        "item": "eggmod:unlucky_egg_item"
+      },
+      "I":{
+          "item": "minecraft:gold_ingot"
+      }
+    },
+    "result": {
+      "item": "eggmod:mildly_lucky_egg_item",
+      "count": 1
+    }
+}

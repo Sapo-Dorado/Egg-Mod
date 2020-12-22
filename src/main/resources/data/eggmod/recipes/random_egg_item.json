@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "EEE",
+      "EEE",
+      "EEE"
+    ],
+    "key": {
+      "E": {
+        "item": "minecraft:egg"
+      }
+    },
+    "result": {
+      "item": "eggmod:random_egg_item",
+      "count": 1
+    }
+}
