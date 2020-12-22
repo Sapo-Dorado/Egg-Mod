@@ -2,5 +2,9 @@
     "item.eggmod.random_egg_item":"Random Egg",
     "item.eggmod.random_egg_item.tooltip":"Summons a random mob",
     "item.eggmod.passive_egg_item":"Passive Egg",
-    "item.eggmod.passive_egg_item.tooltip":"Summons a random passive mob"
+    "item.eggmod.passive_egg_item.tooltip":"Summons a random passive mob",
+    "item.eggmod.hostile_egg_item":"Hostile Egg",
+    "item.eggmod.hostile_egg_item.tooltip":"Summons a random hostile mob",
+    "item.eggmod.boss_egg_item":"Boss Egg",
+    "item.eggmod.boss_egg_item.tooltip":"Summons a random boss mob"
 }

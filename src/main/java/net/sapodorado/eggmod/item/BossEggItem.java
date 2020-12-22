@@ -13,10 +13,10 @@ import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-import net.sapodorado.eggmod.entity.HostileEggEntity;
+import net.sapodorado.eggmod.entity.BossEggEntity;
 
-public class HostileEggItem extends EggItem {
-    public HostileEggItem(Settings settings) {
+public class BossEggItem extends EggItem {
+    public BossEggItem(Settings settings) {
         super(settings);
     }
 
@@ -25,10 +25,10 @@ public class HostileEggItem extends EggItem {
         ItemStack itemStack = user.getStackInHand(hand);
         world.playSound((PlayerEntity)null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_EGG_THROW, SoundCategory.PLAYERS, 0.5F, 0.4F / (RANDOM.nextFloat() * 0.4F + 0.8F));
         if (!world.isClient) {
-           HostileEggEntity hostileEggEntity = new HostileEggEntity(world, user);
-           hostileEggEntity.setItem(itemStack);
-           hostileEggEntity.setProperties(user, user.pitch, user.yaw, 0.0F, 1.5F, 1.0F);
-           world.spawnEntity(hostileEggEntity);
+           BossEggEntity bossEggEntity = new BossEggEntity(world, user);
+           bossEggEntity.setItem(itemStack);
+           bossEggEntity.setProperties(user, user.pitch, user.yaw, 0.0F, 1.5F, 1.0F);
+           world.spawnEntity(bossEggEntity);
         }
   
         user.incrementStat(Stats.USED.getOrCreateStat(this));
@@ -41,6 +41,6 @@ public class HostileEggItem extends EggItem {
 
     @Override
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
-        tooltip.add(new TranslatableText("item.eggmod.hostile_egg_item.tooltip"));
+        tooltip.add(new TranslatableText("item.eggmod.boss_egg_item.tooltip"));
     }
 }
