@@ -1,0 +1,24 @@
+
+{
+    "display":{
+        "description":"Make good investments",
+        "title":"Riches",
+        "icon":{
+            "item":"eggmod:very_lucky_egg_item"
+        }
+    },
+    "parent":"eggmod:gambler",
+    "criteria":{
+        "eggmod:trigger":{
+            "trigger": "minecraft:inventory_changed",
+            "conditions":{
+                "items":[
+                    { "item":"eggmod:mildly_lucky_egg_item"}
+                ]
+            }
+        }
+    },
+    "rewards":{
+        "recipes":["eggmod:very_lucky_egg_item"]
+    }
+}

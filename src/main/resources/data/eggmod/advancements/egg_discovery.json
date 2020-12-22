@@ -5,7 +5,7 @@
         "icon":{
             "item":"eggmod:random_egg_item"
         },
-        "background":"eggmod:textures/random_egg_item.png"
+        "background":"eggmod:textures/item/random_egg_item.png"
     },
     "criteria":{
         "eggmod:trigger":{

@@ -1,0 +1,23 @@
+{
+    "display":{
+        "description":"Embrace the risk",
+        "title":"Gambler",
+        "icon":{
+            "item":"eggmod:mildly_lucky_egg_item"
+        }
+    },
+    "parent":"eggmod:egg_discovery",
+    "criteria":{
+        "eggmod:trigger":{
+            "trigger": "minecraft:inventory_changed",
+            "conditions":{
+                "items":[
+                    { "item":"eggmod:unlucky_egg_item"}
+                ]
+            }
+        }
+    },
+    "rewards":{
+        "recipes":["eggmod:mildly_lucky_egg_item"]
+    }
+}
