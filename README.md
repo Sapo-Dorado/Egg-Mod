@@ -1,9 +1,7 @@
-# Fabric Example Mod
 
-## Setup
+# EggMod
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+This is a fabric mod so you should have fabric and the fabric api installed to run this mod
 
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+# Download
+link: https://drive.google.com/file/d/15sd6aW5Rz0GPYm6BSF3yMOBi3E40hl2i/view?usp=sharing
