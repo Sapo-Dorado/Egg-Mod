@@ -2,12 +2,13 @@ package net.sapodorado.eggmod.entity;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.Packet;
 import net.minecraft.particle.ItemStackParticleEffect;
 import net.minecraft.particle.ParticleTypes;
@@ -15,7 +16,6 @@ import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 import net.sapodorado.eggmod.EggMod;
-import net.sapodorado.eggmod.client.EggModClient;
 
 public class AssassinEggEntity extends ThrownItemEntity {
     public AssassinEggEntity(EntityType<? extends AssassinEggEntity> entityType, World world) {
@@ -48,7 +48,12 @@ public class AssassinEggEntity extends ThrownItemEntity {
     @Override
     protected void onEntityHit(EntityHitResult entityHitResult) {
         super.onEntityHit(entityHitResult);
-        entityHitResult.getEntity().damage(DamageSource.thrownProjectile(this, this.getOwner()), 1000.0F);
+        PlayerEntity player = (PlayerEntity)this.getOwner();
+        entityHitResult.getEntity().damage(DamageSource.thrownProjectile(this, player), 1000.0F);
+        if(player != null && !player.abilities.creativeMode){
+            ItemStack stack = new ItemStack(EggMod.ASSASSIN_EGG_ITEM, 1);
+            player.giveItemStack(stack);
+        }
     }
 
     @Override
@@ -56,7 +61,7 @@ public class AssassinEggEntity extends ThrownItemEntity {
         super.onCollision(hitResult);
         if (!this.world.isClient) {
             if(hitResult.getType() != HitResult.Type.ENTITY){
-                Entity player = this.getOwner();
+                PlayerEntity player = (PlayerEntity)this.getOwner();
                 if(player != null) {
                     player.damage(DamageSource.thrownProjectile(this, player), 1000.0F);
                 }

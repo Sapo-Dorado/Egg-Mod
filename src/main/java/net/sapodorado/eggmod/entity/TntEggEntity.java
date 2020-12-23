@@ -15,7 +15,6 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
 import net.sapodorado.eggmod.EggMod;
-import net.sapodorado.eggmod.client.EggModClient;
 
 public class TntEggEntity extends ThrownItemEntity {
     public TntEggEntity(EntityType<? extends TntEggEntity> entityType, World world) {
