@@ -13,6 +13,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import net.minecraft.util.Util;
 import net.minecraft.util.math.Position;
 import net.minecraft.util.registry.Registry;
@@ -48,16 +49,16 @@ public class EggMod implements ModInitializer {
 
     public static final Item RANDOM_EGG_ITEM = new RandomEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16));
     public static final Item PASSIVE_EGG_ITEM = new PassiveEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16));
-    public static final Item HOSTILE_EGG_ITEM = new HostileEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16));
-    public static final Item BOSS_EGG_ITEM = new BossEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16));
-    public static final Item CREEPER_EGG_ITEM = new CreeperEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16));
-    public static final Item CHARGED_CREEPER_EGG_ITEM = new ChargedCreeperEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16));
-    public static final Item TNT_EGG_ITEM = new TntEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16));
-    public static final Item EASTER_EGG_ITEM = new EasterEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16));
-    public static final Item ASSASSIN_EGG_ITEM = new AssassinEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16));
+    public static final Item HOSTILE_EGG_ITEM = new HostileEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16).rarity(Rarity.UNCOMMON));
+    public static final Item BOSS_EGG_ITEM = new BossEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16).rarity(Rarity.RARE));
+    public static final Item CREEPER_EGG_ITEM = new CreeperEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16).rarity(Rarity.UNCOMMON));
+    public static final Item CHARGED_CREEPER_EGG_ITEM = new ChargedCreeperEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16).rarity(Rarity.RARE));
+    public static final Item TNT_EGG_ITEM = new TntEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16).rarity(Rarity.UNCOMMON));
+    public static final Item EASTER_EGG_ITEM = new EasterEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16).rarity(Rarity.EPIC));
+    public static final Item ASSASSIN_EGG_ITEM = new AssassinEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16).rarity(Rarity.EPIC));
     public static final Item UNLUCKY_EGG_ITEM = new UnluckyEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16));
-    public static final Item MILDLY_LUCKY_EGG_ITEM = new MildlyLuckyEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16));
-    public static final Item VERY_LUCKY_EGG_ITEM = new VeryLuckyEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16));
+    public static final Item MILDLY_LUCKY_EGG_ITEM = new MildlyLuckyEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16).rarity(Rarity.UNCOMMON));
+    public static final Item VERY_LUCKY_EGG_ITEM = new VeryLuckyEggItem(new FabricItemSettings().group(ItemGroup.MISC).maxCount(16).rarity(Rarity.RARE));
 
     public static final EntityType<RandomEggEntity> RANDOM_EGG_ENTITY = Registry.register(
                     Registry.ENTITY_TYPE,
