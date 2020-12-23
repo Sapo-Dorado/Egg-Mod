@@ -44,6 +44,7 @@ import net.sapodorado.eggmod.item.UnluckyEggItem;
 import net.sapodorado.eggmod.item.VeryLuckyEggItem;
 
 public class EggMod implements ModInitializer {
+	public static final Identifier PacketID = new Identifier(EggMod.MODID, "spawn_packet");
 
     public static final String MODID = "eggmod";
 

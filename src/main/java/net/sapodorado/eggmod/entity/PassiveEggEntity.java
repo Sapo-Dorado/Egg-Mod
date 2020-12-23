@@ -72,6 +72,6 @@ public class PassiveEggEntity extends ThrownItemEntity {
 
     @Override
     public Packet<?> createSpawnPacket() {
-        return EntitySpawnPacket.create(this, EggModClient.PacketID);
+        return EntitySpawnPacket.create(this, EggMod.PacketID);
     }
 }

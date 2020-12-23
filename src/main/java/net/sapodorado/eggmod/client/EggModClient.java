@@ -16,7 +16,6 @@ import net.minecraft.util.registry.Registry;
 import java.util.UUID;
 
 public class EggModClient implements ClientModInitializer {
-	public static final Identifier PacketID = new Identifier(EggMod.MODID, "spawn_packet");
 
 	private static final EntityType<?> entities[] = {
 		EggMod.RANDOM_EGG_ENTITY,
@@ -42,7 +41,7 @@ public class EggModClient implements ClientModInitializer {
 	}
 
 	public void receiveEntityPacket() {
-		ClientSidePacketRegistry.INSTANCE.register(PacketID, (ctx, byteBuf) -> {
+		ClientSidePacketRegistry.INSTANCE.register(EggMod.PacketID, (ctx, byteBuf) -> {
 			EntityType<?> et = Registry.ENTITY_TYPE.get(byteBuf.readVarInt());
 			UUID uuid = byteBuf.readUuid();
 			int entityId = byteBuf.readVarInt();
