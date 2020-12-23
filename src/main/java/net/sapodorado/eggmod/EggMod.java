@@ -3,13 +3,20 @@ package net.sapodorado.eggmod;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.block.DispenserBlock;
+import net.minecraft.block.dispenser.ProjectileDispenserBehavior;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Util;
+import net.minecraft.util.math.Position;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.World;
 import net.sapodorado.eggmod.entity.AssassinEggEntity;
 import net.sapodorado.eggmod.entity.BossEggEntity;
 import net.sapodorado.eggmod.entity.ChargedCreeperEggEntity;
@@ -174,6 +181,91 @@ public class EggMod implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier(MODID, "unlucky_egg_item"), UNLUCKY_EGG_ITEM);
         Registry.register(Registry.ITEM, new Identifier(MODID, "mildly_lucky_egg_item"), MILDLY_LUCKY_EGG_ITEM);
         Registry.register(Registry.ITEM, new Identifier(MODID, "very_lucky_egg_item"), VERY_LUCKY_EGG_ITEM);
+
+        DispenserBlock.registerBehavior(RANDOM_EGG_ITEM, new ProjectileDispenserBehavior() {
+            protected ProjectileEntity createProjectile(World world, Position position, ItemStack stack) {
+                return (ProjectileEntity)Util.make(new RandomEggEntity(world, position.getX(), position.getY(), position.getZ()), (eggEntity) -> {
+                    eggEntity.setItem(stack);
+                });
+            }
+        });
+        DispenserBlock.registerBehavior(PASSIVE_EGG_ITEM, new ProjectileDispenserBehavior() {
+            protected ProjectileEntity createProjectile(World world, Position position, ItemStack stack) {
+                return (ProjectileEntity)Util.make(new PassiveEggEntity(world, position.getX(), position.getY(), position.getZ()), (eggEntity) -> {
+                    eggEntity.setItem(stack);
+                });
+            }
+        });
+        DispenserBlock.registerBehavior(HOSTILE_EGG_ITEM, new ProjectileDispenserBehavior() {
+            protected ProjectileEntity createProjectile(World world, Position position, ItemStack stack) {
+                return (ProjectileEntity)Util.make(new HostileEggEntity(world, position.getX(), position.getY(), position.getZ()), (eggEntity) -> {
+                    eggEntity.setItem(stack);
+                });
+            }
+        });
+        DispenserBlock.registerBehavior(BOSS_EGG_ITEM, new ProjectileDispenserBehavior() {
+            protected ProjectileEntity createProjectile(World world, Position position, ItemStack stack) {
+                return (ProjectileEntity)Util.make(new BossEggEntity(world, position.getX(), position.getY(), position.getZ()), (eggEntity) -> {
+                    eggEntity.setItem(stack);
+                });
+            }
+        });
+        DispenserBlock.registerBehavior(CREEPER_EGG_ITEM, new ProjectileDispenserBehavior() {
+            protected ProjectileEntity createProjectile(World world, Position position, ItemStack stack) {
+                return (ProjectileEntity)Util.make(new CreeperEggEntity(world, position.getX(), position.getY(), position.getZ()), (eggEntity) -> {
+                    eggEntity.setItem(stack);
+                });
+            }
+        });
+        DispenserBlock.registerBehavior(CHARGED_CREEPER_EGG_ITEM, new ProjectileDispenserBehavior() {
+            protected ProjectileEntity createProjectile(World world, Position position, ItemStack stack) {
+                return (ProjectileEntity)Util.make(new ChargedCreeperEggEntity(world, position.getX(), position.getY(), position.getZ()), (eggEntity) -> {
+                    eggEntity.setItem(stack);
+                });
+            }
+        });
+        DispenserBlock.registerBehavior(TNT_EGG_ITEM, new ProjectileDispenserBehavior() {
+            protected ProjectileEntity createProjectile(World world, Position position, ItemStack stack) {
+                return (ProjectileEntity)Util.make(new TntEggEntity(world, position.getX(), position.getY(), position.getZ()), (eggEntity) -> {
+                    eggEntity.setItem(stack);
+                });
+            }
+        });
+        DispenserBlock.registerBehavior(EASTER_EGG_ITEM, new ProjectileDispenserBehavior() {
+            protected ProjectileEntity createProjectile(World world, Position position, ItemStack stack) {
+                return (ProjectileEntity)Util.make(new EasterEggEntity(world, position.getX(), position.getY(), position.getZ()), (eggEntity) -> {
+                    eggEntity.setItem(stack);
+                });
+            }
+        });
+        DispenserBlock.registerBehavior(ASSASSIN_EGG_ITEM, new ProjectileDispenserBehavior() {
+            protected ProjectileEntity createProjectile(World world, Position position, ItemStack stack) {
+                return (ProjectileEntity)Util.make(new AssassinEggEntity(world, position.getX(), position.getY(), position.getZ()), (eggEntity) -> {
+                    eggEntity.setItem(stack);
+                });
+            }
+        });
+        DispenserBlock.registerBehavior(UNLUCKY_EGG_ITEM, new ProjectileDispenserBehavior() {
+            protected ProjectileEntity createProjectile(World world, Position position, ItemStack stack) {
+                return (ProjectileEntity)Util.make(new UnluckyEggEntity(world, position.getX(), position.getY(), position.getZ()), (eggEntity) -> {
+                    eggEntity.setItem(stack);
+                });
+            }
+        });
+        DispenserBlock.registerBehavior(MILDLY_LUCKY_EGG_ITEM, new ProjectileDispenserBehavior() {
+            protected ProjectileEntity createProjectile(World world, Position position, ItemStack stack) {
+                return (ProjectileEntity)Util.make(new MildlyLuckyEggEntity(world, position.getX(), position.getY(), position.getZ()), (eggEntity) -> {
+                    eggEntity.setItem(stack);
+                });
+            }
+        });
+        DispenserBlock.registerBehavior(VERY_LUCKY_EGG_ITEM, new ProjectileDispenserBehavior() {
+            protected ProjectileEntity createProjectile(World world, Position position, ItemStack stack) {
+                return (ProjectileEntity)Util.make(new VeryLuckyEggEntity(world, position.getX(), position.getY(), position.getZ()), (eggEntity) -> {
+                    eggEntity.setItem(stack);
+                });
+            }
+        });
     }
 
 }

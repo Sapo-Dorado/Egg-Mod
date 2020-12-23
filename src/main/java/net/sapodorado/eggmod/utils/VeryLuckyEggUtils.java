@@ -11,7 +11,7 @@ import net.sapodorado.eggmod.EggMod;
 public class VeryLuckyEggUtils {
     private static final Random random = new Random();
     public static void processCollision(Entity entity){
-        int i = random.nextInt(5);
+        int i = random.nextInt(6);
         ItemStack stack;
         ItemEntity itemEntity;
         if(i == 0){
@@ -25,6 +25,9 @@ public class VeryLuckyEggUtils {
             itemEntity = new ItemEntity(entity.world, entity.getX(), entity.getY(), entity.getZ(), stack);
         } else if (i == 3) {
             stack = new ItemStack(Items.NETHERITE_INGOT, 1);
+            itemEntity = new ItemEntity(entity.world, entity.getX(), entity.getY(), entity.getZ(), stack);
+        } else if (i == 4) {
+            stack = new ItemStack(Items.TOTEM_OF_UNDYING, 1);
             itemEntity = new ItemEntity(entity.world, entity.getX(), entity.getY(), entity.getZ(), stack);
         } else{
             stack = new ItemStack(Items.DRAGON_BREATH, 1);

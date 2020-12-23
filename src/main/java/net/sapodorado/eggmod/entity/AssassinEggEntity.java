@@ -57,7 +57,9 @@ public class AssassinEggEntity extends ThrownItemEntity {
         if (!this.world.isClient) {
             if(hitResult.getType() != HitResult.Type.ENTITY){
                 Entity player = this.getOwner();
-                player.damage(DamageSource.thrownProjectile(this, player), 1000.0F);
+                if(player != null) {
+                    player.damage(DamageSource.thrownProjectile(this, player), 1000.0F);
+                }
             }
             this.world.sendEntityStatus(this, (byte)3);
             this.remove();

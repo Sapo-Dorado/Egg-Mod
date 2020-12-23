@@ -16,6 +16,7 @@
     "item.eggmod.easter_egg_item":"Easter Egg",
     "item.eggmod.assassin_egg_item":"Assassin Egg",
     "item.eggmod.assassin_egg_item.tooltip":"Better not miss...",
+    "entity.eggmod.assassin_egg_item":"an assassin",
     "item.eggmod.unlucky_egg_item":"Unlucky Egg",
     "item.eggmod.unlucky_egg_item.tooltip":"Meh",
     "item.eggmod.mildly_lucky_egg_item":"Mildly Lucky Egg",
