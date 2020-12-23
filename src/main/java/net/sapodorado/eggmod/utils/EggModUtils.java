@@ -4,8 +4,11 @@ import java.util.Random;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.mob.MagmaCubeEntity;
+import net.minecraft.entity.mob.SlimeEntity;
 import net.minecraft.entity.passive.CatEntity;
 import net.minecraft.entity.passive.SheepEntity;
+import net.minecraft.nbt.CompoundTag;
 
 public class EggModUtils {
     private static final Random random = new Random();
@@ -94,6 +97,14 @@ public class EggModUtils {
             ((CatEntity)entity).setCatType(random.nextInt(10));
         } else if(type.equals(EntityType.SHEEP)) {
             ((SheepEntity)entity).setColor(SheepEntity.generateDefaultColor(new Random()));
+        } else if(type.equals(EntityType.SLIME)){
+            CompoundTag tag = new CompoundTag();
+            tag.putInt("Size", 3);
+            ((SlimeEntity)entity).readCustomDataFromTag(tag);
+        } else if(type.equals(EntityType.MAGMA_CUBE)){
+            CompoundTag tag = new CompoundTag();
+            tag.putInt("Size", 3);
+            ((MagmaCubeEntity)entity).readCustomDataFromTag(tag);
         }
     }
 
